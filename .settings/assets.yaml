@@ -1,0 +1,112 @@
+name: RPTProject01
+version: 2
+projectReferences: 
+resources: 
+  - name: .classpath
+    type: com.ibm.rational.test.lt.classpath
+    dependencies: 
+      - path: /RPTProject01/src
+        type: javaClasspath
+  - name: Results
+    resources: 
+      - name: s1_1708590590777.stats
+        type: com.ibm.rational.test.lt.stats.session
+        properties: 
+          startTime: 1708590590777
+          tags: 
+          testId: A1EED15C7D6EE4C0C81DE53363373334
+          testName: s1
+        dependencies: 
+          - path: /RPTProject01/Results/s1_1708590590777_orch!system.mstats
+            type: statsSessionStore
+          - path: /RPTProject01/Results/s1_1708590590777_orch!system.rstats
+            type: statsSessionStore
+          - path: /RPTProject01/Results/s1_1708590590777_perf!localhost.mstats
+            type: statsSessionStore
+          - path: /RPTProject01/Results/s1_1708590590777_perf!localhost.rstats
+            type: statsSessionStore
+          - path: /RPTProject01/Results/s1_1708590608340.executiondlr
+            type: statsSessionAsset
+          - path: /RPTProject01/Schedules/s1.testsuite
+            type: statsSessionTest
+      - name: s1_1708590590777_orch!system.mstats
+      - name: s1_1708590590777_orch!system.rstats
+        type: com.ibm.rational.test.lt.stats.raw
+      - name: s1_1708590590777_perf!localhost.mstats
+      - name: s1_1708590590777_perf!localhost.rstats
+        type: com.ibm.rational.test.lt.stats.raw
+      - name: s1_1708590608340.executiondlr
+      - name: t1_1708590500531.stats
+        type: com.ibm.rational.test.lt.stats.session
+        properties: 
+          startTime: 1708590500531
+          tags: 
+          testId: A1EED15BD377D8A0C81DE53363373334
+          testName: t1
+        dependencies: 
+          - path: /RPTProject01/Results/t1_1708590500531_orch!system.mstats
+            type: statsSessionStore
+          - path: /RPTProject01/Results/t1_1708590500531_orch!system.rstats
+            type: statsSessionStore
+          - path: /RPTProject01/Results/t1_1708590500531_perf!localhost.mstats
+            type: statsSessionStore
+          - path: /RPTProject01/Results/t1_1708590500531_perf!localhost.rstats
+            type: statsSessionStore
+          - path: /RPTProject01/Results/t1_1708590501688.executiondlr
+            type: statsSessionAsset
+          - path: /RPTProject01/Tests/t1.testsuite
+            type: statsSessionTest
+      - name: t1_1708590500531_orch!system.mstats
+      - name: t1_1708590500531_orch!system.rstats
+        type: com.ibm.rational.test.lt.stats.raw
+      - name: t1_1708590500531_perf!localhost.mstats
+      - name: t1_1708590500531_perf!localhost.rstats
+        type: com.ibm.rational.test.lt.stats.raw
+      - name: t1_1708590501688.executiondlr
+  - name: Schedules
+    resources: 
+      - name: s1.testsuite
+        type: com.ibm.rational.test.lt.schedule
+        version: 11.0.0.0
+        properties: 
+          description: 'Stages:
+
+	users=5; duration=Run Until Finished
+
+User Group 1: Group Size 100.0 percent
+
+	Test(s): t1
+
+'
+          name: s1
+          type: com.ibm.rational.test.common.schedule.Schedule
+          uid: A1EED15C7D6EE4C0C81DE53363373334
+        dependencies: 
+          - path: /RPTProject01/Tests/t1.testsuite
+            type: scheduleInvokedTest
+  - name: Tests
+    resources: 
+      - name: t1.recdata
+      - name: t1.recsession
+        type: com.ibm.rational.test.lt.recsession
+        dependencies: 
+          - path: /RPTProject01/Tests/t1.recdata
+            type: recsessionRecdata
+      - name: t1.testsuite
+        type: com.ibm.rational.test.lt.test
+        version: 11.0.0.0
+        properties: 
+          features: 'com.ibm.rational.test.lt.feature.lt,com.ibm.rational.test.lt.feature.http'
+          type: com.ibm.rational.test.lt.lttest
+          uid: A1EED15BD377D8A0C81DE53363373334
+        dependencies: 
+          - path: /RPTProject01/Tests/t1.recsession
+            type: testRecsession
+  - name: src
+    resources: 
+      - name: test
+        resources: 
+          - name: S1_Schedule_A1EED15C7D6EE4C0C81DE53363373334.java
+            type: com.ibm.rational.test.lt.generatedCode
+          - name: T1_Test_A1EED15BD377D8A0C81DE53363373334.java
+            type: com.ibm.rational.test.lt.generatedCode
